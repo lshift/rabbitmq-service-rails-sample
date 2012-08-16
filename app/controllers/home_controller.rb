@@ -22,6 +22,10 @@ class HomeController < ApplicationController
     @client
   end
 
+  def url
+    ENV['RABBIT_MQ_BY_LSHIFT_URL']
+  end
+
   # Return the "nameless exchange", pre-defined by AMQP as a means to
   # send messages to specific queues.  Again, we use a class method to
   # share this across requests.
