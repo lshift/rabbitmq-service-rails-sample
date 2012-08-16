@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   # connection across many requests.
   def self.client
     unless @client
-      c = Bunny.new(ENV['RABBIT_MQ_BY_LSHIFT_URL')
+      c = Bunny.new(ENV['RABBIT_MQ_BY_LSHIFT_URL'])
       c.start
       @client = c
 
