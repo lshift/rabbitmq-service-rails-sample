@@ -1,4 +1,3 @@
-require 'rabbitmq_service_util'
 require 'bunny'
 
 class HomeController < ApplicationController
@@ -13,7 +12,7 @@ class HomeController < ApplicationController
   # connection across many requests.
   def self.client
     unless @client
-      c = Bunny.new(RabbitMQ::amqp_connection_url)
+      c = Bunny.new(ENV['RABBIT_MQ_BY_LSHIFT_URL')
       c.start
       @client = c
 
