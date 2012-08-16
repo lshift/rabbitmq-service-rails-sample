@@ -7,7 +7,7 @@
   <%= text_field_tag(:message) %>
   <%= submit_tag("Publish") %>
 <% end %>
-<p>Sending to "<%= :url %>"</p>
+<p>Sending to "<%= flash[:url] %>"</p>
 
 <% if flash[:published] %>
   <p>Published a message!</p>

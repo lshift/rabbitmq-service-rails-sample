@@ -22,10 +22,6 @@ class HomeController < ApplicationController
     @client
   end
 
-  def url
-    ENV['RABBIT_MQ_BY_LSHIFT_URL']
-  end
-
   # Return the "nameless exchange", pre-defined by AMQP as a means to
   # send messages to specific queues.  Again, we use a class method to
   # share this across requests.
@@ -55,6 +51,7 @@ class HomeController < ApplicationController
 
   def get
     flash[:got] = :queue_empty
+    flash[:url] = ENV['RABBIT_MQ_BY_LSHIFT_URL']
 
     # Wait for a message from the queue
     HomeController.messages_queue.subscribe(:ack => true, :timeout => 10,
