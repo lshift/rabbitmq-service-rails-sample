@@ -6,6 +6,7 @@
   <%= label_tag(:message, "Message to publish:") %>
   <%= text_field_tag(:message) %>
   <%= submit_tag("Publish") %>
+  <%= ENV['RABBIT_MQ_BY_LSHIFT_URL'] %>
 <% end %>
 
 <% if flash[:published] %>
