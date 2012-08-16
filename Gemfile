@@ -11,5 +11,5 @@ gem 'rails', '3.0.9'
 #gem 'pg'
 
 # For our app code
-gem 'rabbitmq-service-util'
+#gem 'rabbitmq-service-util'
 gem 'bunny'
