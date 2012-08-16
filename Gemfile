@@ -8,7 +8,7 @@ gem 'rails', '3.0.9'
 #end
 
 #gem 'mysql2', '~> 0.2.7'
-#gem 'pg'
+gem 'pg'
 
 # For our app code
 #gem 'rabbitmq-service-util'
