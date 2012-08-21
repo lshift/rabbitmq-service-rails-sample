@@ -52,6 +52,7 @@ class HomeController < ApplicationController
   def get
     flash[:got] = :queue_empty
     flash[:url] = ENV['RABBIT_MQ_BY_LSHIFT_URL']
+    puts "Sending to Rabbit URL: " + ENV['RABBIT_MQ_BY_LSHIFT_URL'].inspect
 
     # Wait for a message from the queue
     HomeController.messages_queue.subscribe(:ack => true, :timeout => 10,
