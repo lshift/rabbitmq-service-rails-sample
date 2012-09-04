@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   # connection across many requests.
   def self.client
     unless @client
-      c = Bunny.new(ENV['RABBIT_MQ_BY_LSHIFT_URL'])
+      c = Bunny.new(ENV['RABBITMQ_BY_LSHIFT_URL'])
       c.start
       @client = c
 
@@ -51,7 +51,7 @@ class HomeController < ApplicationController
 
   def get
     flash[:got] = :queue_empty
-    flash[:url] = ENV['RABBIT_MQ_BY_LSHIFT_URL']
+    flash[:url] = ENV['RABBITMQ_BY_LSHIFT_URL']
 
     # Wait for a message from the queue
     HomeController.messages_queue.subscribe(:ack => true, :timeout => 10,
