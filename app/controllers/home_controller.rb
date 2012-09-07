@@ -11,9 +11,8 @@ class HomeController < ApplicationController
   # connections can be long-lived, so we would like to re-use the
   # connection across many requests.
   def self.client
-    puts "Using Rabbit URL: " + ENV['RABBITMQ_BY_LSHIFT_URL'].inspect
     unless @client
-      c = Bunny.new(ENV['RABBITMQ_BY_LSHIFT_URL'])
+      c = Bunny.new(ENV['RABBITMQ_BIGWIG_URL'])
       c.start
       @client = c
 
