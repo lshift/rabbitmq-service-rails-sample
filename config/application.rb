@@ -38,5 +38,9 @@ module RabbitOnRails
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+
+    config.middleware.delete(ActiveRecord::ConnectionAdapters::ConnectionManagement)
+    config.middleware.delete(ActiveRecord::QueryCache)
   end
 end
