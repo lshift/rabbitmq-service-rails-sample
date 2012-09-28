@@ -3,7 +3,7 @@ require 'bunny'
 class HomeController < ApplicationController
   # The index action doesn't need to do anything
 
-  def initialize 
+  def initialize
     # Ensure that the queue is created in RabbitMQ.
     HomeController.messages_queue
   end
