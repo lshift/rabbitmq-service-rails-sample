@@ -75,4 +75,5 @@ PLATFORMS
 
 DEPENDENCIES
   bunny
+  json (= 1.7.7)
   rails (= 3.0.20)
